@@ -1,7 +1,6 @@
 from dotenv import load_dotenv
 import os
-from langchain.chat_models import init_chat_model
-from langchain_core.messages import HumanMessage, SystemMessage
+
 
 
 # Load environment variables from the .env file
@@ -19,3 +18,6 @@ langsmith_tracing = os.getenv("LANGSMITH_TRACING")
 #Acess the Tavily API key
 Tavily_api_key = os.getenv("Tavily_API_KEY")
 
+# ✅ Set LangSmith tracing via environment variable
+os.environ["LANGCHAIN_TRACING_V2"] = "true"  # Enables tracing
+os.environ["LANGCHAIN_PROJECT"] = "WeatherBot"  # Optional: Name your project
